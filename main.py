@@ -13,7 +13,7 @@ def main():
     print("start searching")
     path,cost = astar.astar(start,ends,astar.cost_time,astar.geo_distance)
     print("------------------------")
-    print(f"From {start_stop} To {end_stop} at {start_time} in {cost} minutes by:"S)
+    print(f"From {start_stop} To {end_stop} at {start_time} in {cost} minutes by:")
     for node in path:
         print(node)
 if __name__ == "__main__":
