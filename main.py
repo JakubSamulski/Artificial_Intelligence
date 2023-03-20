@@ -5,7 +5,7 @@ import djikstra
 
 def main():
     start_stop = "Kościuszki"
-    start_time = "07:15:00"
+    start_time = "09:33:00"
     end_stop = "Magellana"
 
     graph = data_pre_processing.create_graph('connection_graph.csv')

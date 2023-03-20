@@ -34,7 +34,7 @@ class Node:
 
     #its required for heappush and it promotes staying on the same line if priority is the same
     def __lt__(self, other):
-        return self
+        return self if self.ride_info.departure_time < other.ride_info.departure_time else other
 
     def set_neighbours(self, nodes_by_start_stop: dict):
         """ creates a list of neighbours to the node , neighbour nodes are those that have start_stop equal to

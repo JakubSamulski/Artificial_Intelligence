@@ -83,8 +83,8 @@ def cost_time(a: Node, b: Node):
 
 
 def cost_switch_line(a:Node,b:Node):
-    if a.ride_info.line != b.ride_info.line:
-        return 3
+    if a.ride_info.line != b.ride_info.line or a.ride_info.arrival_time != b.ride_info.departure_time:
+        return 5
     return 0
 
 def cost_combined(a,b):
