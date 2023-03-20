@@ -42,8 +42,3 @@ def dijkstra(graph, start, end,cost_fn):
 
     # If we get here, there is no path from start to end
     return None, None
-
-graph = data_pre_processing.create_graph('connection_graph.csv')
-start = astar.get_start_node(graph,"Kościuszki","19:59:00")
-ends = astar.get_end_nodes(graph,"Magellana","19:59:00")
-

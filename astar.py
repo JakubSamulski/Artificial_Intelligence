@@ -61,7 +61,7 @@ def get_start_node(graph: dict, start_dest: str, start_time: str):
 
 
 # TODO think about moving this and function above somewhere else
-def get_end_nodes(graph: dict, stop: str, time: str):
+def get_nodes_by_name(graph: dict, stop: str, time: str):
     """:return list of possible end nodes, list because we dont know by which line we will get to the destination"""
     candidates = []
     time = data_pre_processing.parse_time(time)
@@ -82,5 +82,10 @@ def cost_time(a: Node, b: Node):
                 datetime.combine(date.min,a.ride_info.departure_time)).total_seconds() // 60)
 
 
+def cost_switch_line(a:Node,b:Node):
+    if a.ride_info.line != b.ride_info.line:
+        return 3
+    return 0
 
-
+def cost_combined(a,b):
+    return cost_time(a,b)+cost_switch_line(a,b)*2
