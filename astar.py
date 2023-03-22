@@ -44,7 +44,7 @@ def astar(start: Node, goal: list[Node], cost_fn: Callable[[Node, Node], int],
     return path, cost_so_far[end_node]
 
 
-def get_start_node(graph: dict, start_dest: str, start_time: str):
+def get_start_node(graph: dict, start_dest: str, start_time: str, end_node: Node):
     """gets start node based on start_dest string and start_time string
         start node is the node with ride_info.start_stop = start_dest and ride_info.departure_time > start_time
         we are looking for node with earliest ride_info.departure_time
@@ -53,9 +53,12 @@ def get_start_node(graph: dict, start_dest: str, start_time: str):
     earliest_start_node = None
     for node in graph.keys():
         if node.ride_info.start_stop == start_dest and node.ride_info.departure_time > start_time:
+            #print(f'{earliest_start_node},   {node}')
             if earliest_start_node is None:
                 earliest_start_node = node
-            elif node.ride_info.departure_time < earliest_start_node.ride_info.departure_time:
+            elif node.ride_info.departure_time < earliest_start_node.ride_info.departure_time and \
+                    geo_distance(earliest_start_node, end_node) >= geo_distance(node, end_node):
+                print(f'{earliest_start_node},   {node}')
                 earliest_start_node = node
     return earliest_start_node
 
@@ -79,13 +82,14 @@ def geo_distance(a: Node, b: Node) -> float:
 def cost_time(a: Node, b: Node):
     """returns difference between ride_info.departure_time of nodes in minutes as cost function of time"""
     return int((datetime.combine(date.min, b.ride_info.departure_time) -
-                datetime.combine(date.min,a.ride_info.departure_time)).total_seconds() // 60)
+                datetime.combine(date.min, a.ride_info.departure_time)).total_seconds() // 60)
 
 
-def cost_switch_line(a:Node,b:Node):
+def cost_switch_line(a: Node, b: Node):
     if a.ride_info.line != b.ride_info.line or a.ride_info.arrival_time != b.ride_info.departure_time:
         return 5
     return 0
 
-def cost_combined(a,b):
-    return cost_time(a,b)+cost_switch_line(a,b)*2
+
+def cost_combined(a, b):
+    return cost_time(a, b) + cost_switch_line(a, b) * 2
