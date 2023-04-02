@@ -88,7 +88,7 @@ def get_nodes_by_name(graph: dict, stop: str, time: str):
             candidates.append(node)
     return candidates
 
-#
+#Way slower
 # def geo_distance(a: Node, b: Node) -> float:
 #     return geopy.distance.geodesic((a.geo_info.start_lat, a.geo_info.start_long),
 #                                    (b.geo_info.start_lat, b.geo_info.start_long)).km
