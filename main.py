@@ -2,6 +2,10 @@ import astar
 import data_pre_processing
 import djikstra
 
+from functools import wraps
+import time
+
+
 
 def main():
     start_stop = "Kościuszki"

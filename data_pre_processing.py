@@ -57,6 +57,8 @@ def create_graph(filename: str):
                      dtype={"unnamed": int, "company": str, "line": str, "departure_time": str, "arrival_time": str
                          , "start_stop": str, "end_stop": str, "start_stop_lat": float, "start_stop_lon": float,
                             "end_stop_lat": float, "end_stop_lon": float})
+    df.sort_values(['line','departure_time','start_stop'])
+    print(df["line"],df["departure_time"],df['start_stop'])
     nodes_list = []
 
     #to optimize it so we dont have to iterate over all nodes in search of its neighbours

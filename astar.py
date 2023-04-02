@@ -8,7 +8,22 @@ import geopy.distance
 import data_pre_processing
 from data_pre_processing import Node
 
+from functools import wraps
+import time
 
+
+def timeit(func):
+    @wraps(func)
+    def timeit_wrapper(*args, **kwargs):
+        start_time = time.perf_counter()
+        result = func(*args, **kwargs)
+        end_time = time.perf_counter()
+        total_time = end_time - start_time
+        print(f'Function {func.__name__} Took {total_time:.4f} seconds')
+        return result
+    return timeit_wrapper
+
+@timeit
 def astar(start: Node, goal: list[Node], cost_fn: Callable[[Node, Node], int],
           heuristic_fn: Callable[[Node, Node], float]):
     front = [(0, start)]
@@ -70,10 +85,14 @@ def get_nodes_by_name(graph: dict, stop: str, time: str):
             candidates.append(node)
     return candidates
 
+#
+# def geo_distance(a: Node, b: Node) -> float:
+#     return geopy.distance.geodesic((a.geo_info.start_lat, a.geo_info.start_long),
+#                                    (b.geo_info.start_lat, b.geo_info.start_long)).km
 
 def geo_distance(a: Node, b: Node) -> float:
-    return geopy.distance.geodesic((a.geo_info.start_lat, a.geo_info.start_long),
-                                   (b.geo_info.start_lat, b.geo_info.start_long)).km
+    return abs(a.geo_info.start_lat - b.geo_info.start_lat) + abs(a.geo_info.start_long - b.geo_info.start_long) * 111.1
+
 
 
 def cost_time(a: Node, b: Node):

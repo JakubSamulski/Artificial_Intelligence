@@ -3,7 +3,7 @@ import heapq
 import astar
 import data_pre_processing
 
-
+@astar.timeit
 def dijkstra(graph, start, end,cost_fn):
     distances = {node: float('inf') for node in graph}
     distances[start] = 0
