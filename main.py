@@ -9,12 +9,13 @@ import time
 
 def main():
     start_stop = "Kościuszki"
-    start_time = "09:33:00"
+    start_time = "07:15:00"
     end_stop = "Magellana"
 
     graph = data_pre_processing.create_graph('connection_graph.csv')
-    start = astar.get_start_node(graph,start_stop,start_time)
+
     ends = astar.get_nodes_by_name(graph, end_stop, start_time)
+    start = astar.get_start_node(graph,start_stop,start_time,ends[0])
     print("start searching")
     path_astar,cost_astar = astar.astar(start,ends,astar.cost_combined,astar.geo_distance)
     print("------------------------ astar combined")
