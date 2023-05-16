@@ -1,0 +1,115 @@
+
+problem(pralka, "Programy nie uruchamiają się po zamknięciu drzwiczek.").
+problem(pralka, "Nie można uruchomić lub wybrać programu.").
+problem(pralka, "Woda wewnątrz pralki.").
+problem(pralka, "Pralka nie nabiera wody.").
+problem(pralka, "Pralka nie spuszcza wody. ").
+problem(pralka, "Pralka drga lub hałasuje. ").
+problem(pralka, "Spod pralki wycieka woda. ").
+problem(pralka, "Pralka zatrzymała się na krótko po rozpoczęciu programu. ").
+problem(pralka, "Pralka zrzuca wodę zaraz po jej pobraniu. ").
+
+
+
+powod(pralka, "Programy nie uruchamiają się po zamknięciu drzwiczek.", "Nie naciśnięto przycisku Start/Pauza/Anuluj.").
+powod(pralka, "Programy nie uruchamiają się po zamknięciu drzwiczek.", "W przypadku załadowania zbyt dużej ilości prania mogą wystąpić problemy z zamykaniem drzwiczek.").
+
+powod(pralka, "Nie można uruchomić lub wybrać programu.", "Pralka przełączyła się w tryb autoochrony z uwagi na problem z zasilaniem (np. napięcie w sieci, ciśnienie wody itp.) ").
+
+powod(pralka, "Woda wewnątrz pralki.", "Ze względu na proces kontroli jakości w trakcie produkcji we wnętrzu pralki pozostało trochę wody. ").
+
+powod(pralka, "Pralka nie nabiera wody.", "Kran jest zakręcony ").
+powod(pralka, "Pralka nie nabiera wody.", "Wąż dopływu wody jest zagięty. ").
+powod(pralka, "Pralka nie nabiera wody.", "Filtr dopływu wody jest zatkany. ").
+powod(pralka, "Pralka nie nabiera wody.", "Nie zamknięto drzwiczek. ").
+
+powod(pralka, "Pralka nie spuszcza wody. ", "Wąż spustowy wody jest zatkany lub zagięty. ").
+powod(pralka, "Pralka nie spuszcza wody. ", "Filtr pompy jest zatkany. ").
+
+powod(pralka, "Pralka drga lub hałasuje. ", "Pralka nie stoi równo. ").
+powod(pralka, "Pralka drga lub hałasuje. ", "Do filtru pompy dostał się jakiś twardy przedmiot. ").
+powod(pralka, "Pralka drga lub hałasuje. ", "Nie usunięto śrub zabezpieczających pralkę w transporcie. ").
+powod(pralka, "Pralka drga lub hałasuje. ", "Za mało prania w pralce. ").
+powod(pralka, "Pralka drga lub hałasuje. ", "Za dużo prania w pralce. ").
+powod(pralka, "Pralka drga lub hałasuje. ", "Pralka opiera się o jakiś sztywny przedmiot. ").
+
+powod(pralka, "Spod pralki wycieka woda. ", "Wąż spustowy wody jest zatkany lub zagięty. ").
+powod(pralka, "Spod pralki wycieka woda. ", "Filtr pompy jest zatkany. ").
+
+powod(pralka, "Pralka zatrzymała się na krótko po rozpoczęciu programu. ", "Pralka zatrzymała się na chwilę z uwagi na niskie napięcie. ").
+
+powod(pralka, "Pralka zrzuca wodę zaraz po jej pobraniu. ", "Wąż spustowy jest na nieodpowiedniej wysokości. ").
+
+
+rozwiazanie(pralka, "Programy nie uruchamiają się po zamknięciu drzwiczek.","Nie naciśnięto przycisku Start/Pauza/Anuluj.", "Naciśnij przycisk Start/Pauza/Anuluj.").
+rozwiazanie(pralka, "Programy nie uruchamiają się po zamknięciu drzwiczek.","W przypadku załadowania zbyt dużej ilości prania mogą wystąpić problemy z zamykaniem drzwiczek.", "W takim przypadku należy zmniejszyć ilość prania i upewnić się, że drzwiczki są prawidłowo zamknięte.").
+
+rozwiazanie(pralka, "Nie można uruchomić lub wybrać programu.","Pralka przełączyła się w tryb autoochrony z uwagi na problem z zasilaniem (np. napięcie w sieci, ciśnienie wody itp.) ", "Wyłączenie i ponowne włączenie pralkipowoduje anulowanie programu. Naciśniji przytrzymaj przez 3 sekundy przyciskWł./Wył.").
+
+rozwiazanie(pralka, "Woda wewnątrz pralki.","Ze względu na proces kontroli jakości w trakcie produkcji we wnętrzu pralki pozostało trochę wody. ", "To nie jest usterka; woda ta nie szkodzipralce").
+
+rozwiazanie(pralka, "Pralka nie nabiera wody.","Kran jest zakręcony ", "Odkręć krany").
+rozwiazanie(pralka, "Pralka nie nabiera wody.","Wąż dopływu wody jest zagięty. ", "Wyprostuj wąż.").
+rozwiazanie(pralka, "Pralka nie nabiera wody.","Filtr dopływu wody jest zatkany. ", "Oczyść filtr.").
+rozwiazanie(pralka, "Pralka nie nabiera wody.","Nie zamknięto drzwiczek. ", "Zamknij drzwiczki.").
+
+rozwiazanie(pralka, "Pralka nie spuszcza wody. ","Wąż spustowy wody jest zatkany lub zagięty. ", "Przeczyść lub rozprostuj wąż spustuwody.").
+rozwiazanie(pralka, "Pralka nie spuszcza wody. ","Filtr pompy jest zatkany. ", " Oczyść filtr pompy.").
+
+rozwiazanie(pralka, "Pralka drga lub hałasuje. ","Pralka nie stoi równo. ", "Ustaw pralkę równo, regulując nóżki.").
+rozwiazanie(pralka, "Pralka drga lub hałasuje. ","Do filtru pompy dostał się jakiś twardy przedmiot. ", "Oczyść filtr pompy.").
+rozwiazanie(pralka, "Pralka drga lub hałasuje. ","Nie usunięto śrub zabezpieczających pralkę w transporcie. ", "Usunąć śruby zabezpieczające.").
+rozwiazanie(pralka, "Pralka drga lub hałasuje. ","Za mało prania w pralce. ", "Dodaj więcej prania do pralki.").
+rozwiazanie(pralka, "Pralka drga lub hałasuje. ","Za dużo prania w pralce. ", "Wyjmij trochę prania z pralki lubręcznie rozłóż pranie w pralce bardziejrównomiernie").
+rozwiazanie(pralka, "Pralka drga lub hałasuje. ","Pralka opiera się o jakiś sztywny przedmiot. ", "Upewnij się, że pralka o nic się nie opiera").
+
+rozwiazanie(pralka, "Spod pralki wycieka woda. ","Wąż spustowy wody jest zatkany lub zagięty. ", "Przeczyść lub rozprostuj wąż spustuwody.").
+rozwiazanie(pralka, "Spod pralki wycieka woda. ","Filtr pompy jest zatkany. ", "Oczyść filtr pompy.").
+
+rozwiazanie(pralka, "Pralka zatrzymała się na krótko po rozpoczęciu programu. ","Pralka zatrzymała się na chwilę z uwagi na niskie napięcie. ", "Następnie wznowi działanie, gdy napięciez powrotem osiągnie normalny poziom.").
+
+rozwiazanie(pralka, "Pralka zrzuca wodę zaraz po jej pobraniu. ","Wąż spustowy jest na nieodpowiedniej wysokości. ", "Podłącz wąż spustu wody tak, jak opisanow instrukcji obsługi.").
+
+rozwiazanie_wiedza(Problem, Powod, Rozwiazanie) :-
+    problem(Pralka, Problem),
+    powod(Pralka, Problem, Powod),
+    rozwiazanie(Pralka, Problem,Powod, Rozwiazanie).
+
+
+rozwiaz_problem(N,Problem,Powod,Rozwiazanie) :-
+    wypisz_problemy,
+    znajdz_problem_od_numeru(N,Problem,Powod,Rozwiazanie).
+
+
+
+wypisz_problemy :-
+    write('Wybierz problem z listy'),nl,
+    findall(Problem, problem(_, Problem), Problemy),
+    numeruj_i_wypisz(Problemy, 1).
+
+numeruj_i_wypisz([], _).
+numeruj_i_wypisz([Problem | Problemy], N) :-
+    write(N), write('. '), write(Problem), nl,
+    N1 is N + 1,
+    numeruj_i_wypisz(Problemy, N1).
+
+znajdz_problem_od_numeru(N, Problem,X,Y) :-
+    read(N),
+    znajdz_problem(N, Problem),
+    rozwiazanie_wiedza(Problem, X, Y).
+
+znajdz_problem(N, Problem) :-
+    findall(P, problem(_, P), Problemy),
+    length(Problemy, Count),
+    N > 0,
+    N =< Count,
+    element_at(N, Problemy, Problem).
+
+element_at(1, [X|_], X) :- !.
+element_at(N, [_|Xs], X) :-
+    N > 1,
+    N1 is N - 1,
+    element_at(N1, Xs, X).
+
+
+

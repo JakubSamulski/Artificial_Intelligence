@@ -1,0 +1,18 @@
+
+problem(pralka, "Programy nie uruchamiają się po zamknięciu drzwiczek.").
+problem(pralka, "Pralka nie pobiera wody.").
+problem(pralka, "Pralka nie wiruje.").
+
+powod(pralka, "Programy nie uruchamiają się po zamknięciu drzwiczek.", "Nie naciśnięto przycisku Start/Pauza/Anuluj.").
+powod(pralka, "Pralka nie pobiera wody.", "Zablokowany przewód doprowadzający wodę.").
+powod(pralka, "Pralka nie wiruje.", "Uszkodzony silnik wirnika.").
+
+rozwiazanie(pralka, "Programy nie uruchamiają się po zamknięciu drzwiczek.", "Naciśnij przycisk Start/Pauza/Anuluj.").
+rozwiazanie(pralka, "Pralka nie pobiera wody.", "Sprawdź, czy przewód doprowadzający wodę nie jest zablokowany lub zgnieciony. Upewnij się, że kran jest otwarty i woda jest dostępna.").
+rozwiazanie(pralka, "Pralka nie wiruje.", "Skontaktuj się z serwisem technicznym w celu naprawy silnika wirnika.").
+
+rozwiazanie_wiedza(Problem, Powod, Rozwiazanie) :-
+    problem(Pralka, Problem),
+    powod(Pralka, Problem, Powod),
+    rozwiazanie(Pralka, Problem, Rozwiazanie).
+
