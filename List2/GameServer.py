@@ -21,17 +21,16 @@ class Server:
             print(f"Valid moves: {get_valid_moves(self.game_state)}")
 
             if self.game_state.current_player == 1:
-                self.make_move(self.player1)
+                self.execute_move(self.player1)
 
             else:
-                self.make_move(self.player1)
-
-
+                self.execute_move(self.player2)
 
         print("Game over!")
         print("Player {} won!".format(winner) if winner != 0 else "Tie!")
 
-    def make_move(self,player:Player):
+
+    def execute_move(self, player:Player):
         move = player.get_move(self.game_state)
         if move is None:
             print("Player {} passed".format(self.game_state.current_player))
